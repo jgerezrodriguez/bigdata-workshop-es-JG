@@ -1,1 +1,20 @@
-Prueba readme
+Proyecto Seminario de Tópicos Avanzados en Datos Complejos - Julián Gerez
+
+Se utilizó un dataset público de Kaggle, el cual posee un conjunto de datos históricos de venta de las tiendas del supermercado Walmart.
+Enlace de descarga (https://www.kaggle.com/datasets/yasserh/walmart-dataset).
+
+El dataset posee los datos de los años 2010 al 2012. Se completa el dataset con la información de las 45 tiendas y la venta realizada en cada una de ellas en dicho periodo de tiempo. 
+
+Se inicia el análisis creando una sesión de Spark para realizar el procesamiento distribuido. De este modo, se puede conectar el driver (nodo principal) con los executors (workers). La aplicación la defino con el nombre "pyspark-walmart". La misma se puede observar en la interfaz de Spark (http://localhost:8080/). 
+De este modo se puede conecar python con Spark. 
+
+Luego se procede a la creación del dataframe en Spark, donde se carga el dataset de Walmart. 
+
+En el siguiente paso, se observa el esquema de los datos que viene por default y se procede a la transformación de los mismos utilizando las funciones de pyspark.
+
+Continuando con el análisis, se calculan distintas operaciones como la cantidad de semananas que poseen días festivos, la cantidad de ventas total del período, las ventas totales por tienda, etc. Se utiliza el comando groupby, para realizar la transformación en los workers, y luego con el comando show, se realiza la ejecución en el driver. 
+
+Para la creación de gráficos de utilizaron las librerías de pandas y matplotlib. Previamente se convierte el dataframe de spark a pandas para poder graficar. 
+
+Posteriormente se procede a realizar la ingeniería de atributos. Se generan nuevos atributos (year, month) a partir de la variable date.
+
